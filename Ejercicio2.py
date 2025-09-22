@@ -8,7 +8,7 @@ preus_base = {
 }
 
 # Factors multiplicadors per zona
-multiplicadors = {
+zones = {
     "1": 1.00,
     "2": 1.35,
     "3": 1.89
@@ -39,13 +39,13 @@ while continuar.lower() == "s":
 
     # Selecció zona
     zona = input("Selecciona la zona del teu desplaçament (1, 2 o 3): ")
-    if zona not in multiplicadors:
+    if zona not in zones:
         print("Zona invàlida!\n")
         continuar = input("Vols intentar-ho de nou? (s/n): ")
         continue
 
     # Càlcul preu
-    preu = round(preus_base[billet][1] * multiplicadors[zona], 2) # Redondeig a 2 decimals
+    preu = round(preus_base[billet][1] * zones[zona], 2) # Redondeig a 2 decimals
     print(f"El preu del bitllet és: {preu:.2f} €")
 
     # Procés de pagament
